@@ -28,7 +28,7 @@ const Home = () => {
               <div className="infos-text">
                 <h2>Opções de parcelamento:</h2>
                 <p>
-                  Nós da Trip aceitamos diversas formas de pagamento, como dinheiro, cartão de débito, cartão de crédito, pix e, inclusive, parcelamento por boleto bancário. Nos importamos em oferecer escolhas que
+                  Nós da Trip trabalhamos diversas formas de pagamento, como dinheiro, cartão de débito, cartão de crédito, pix e, inclusive, parcelamento por boleto bancário. Nos importamos em oferecer escolhas que
                   melhor se adequem às necessidades de nossos clientes.
                 </p>
               </div>

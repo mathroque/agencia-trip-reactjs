@@ -1,0 +1,97 @@
+/*---PÁGINA PROMOÇÃO---*/
+
+#promo-header {
+  color: rgb(95, 95, 95);
+  text-align: left;
+  width: 100%;
+  display: flex;
+  padding-top: 10px;
+}
+
+.promo-icon {
+  color: tomato;
+}
+
+.promo-header-text {
+  padding-left: 10px;
+}
+
+.promo-header-text p {
+  font-size: 1.1rem;
+  color: tomato;
+}
+
+#promo-body {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.continente {
+  background: rgba(245, 243, 243, 0.938);
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin: 20px 0;
+  box-shadow: 1px 1px 10px;
+}
+
+.continente a {
+  text-decoration: none;
+}
+
+.continente h4 {
+  margin: 0;
+  color: #007bff;
+  transition: all 0.3s;
+}
+
+.continente h4:hover {
+  color: tomato;
+  text-shadow: 1px 1px 20px rgb(175, 175, 175);
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+}
+
+.card {
+  max-width: 20%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bg-tomato {
+  background: tomato;
+}
+
+/*---FIM PÁGINA PROMOÇÃO---*/
+
+/* -------------------- MOBILE -------------------- */
+
+@media (max-width: 991.98px) {
+  /*---PÁGINA PROMOÇÃO---*/
+
+  #promo-header {
+    flex-direction: row;
+    padding: 5px;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    margin: 10px auto;
+    max-width: 90%;
+  }
+
+  /*---FIM PÁGINA PROMOÇÃO---*/
+}

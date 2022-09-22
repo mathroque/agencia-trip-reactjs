@@ -1,0 +1,186 @@
+/* ----MAIN---- */
+
+.banner {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: rgb(95, 95, 95);
+  background: rgba(255, 255, 255, 0.178);
+}
+
+.banner h1 {
+  font-size: 3.5rem;
+}
+
+.banner p {
+  font-size: 1.2rem;
+}
+
+.brand-color {
+  color: #007bff;
+  font-size: 1.2rem;
+}
+
+#carouselExampleControls {
+  margin: 40px auto;
+  max-width: 1500px;
+}
+
+.img-configs {
+  max-height: 350px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.img-configs:hover {
+  opacity: 80%;
+}
+
+.seta-cor {
+  color: #007bff;
+  font-size: 3rem;
+}
+
+#conteudo {
+  background: rgba(99, 99, 99, 0.856);
+  padding-top: 30px;
+}
+
+.width-1284 {
+  max-width: 1284px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.infos {
+  background: #424242;
+  max-width: 47%;
+  min-width: 245px;
+  padding: 20px 20px 10px 20px;
+  margin: 20px 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.infos img {
+  max-height: 175px;
+  max-width: 300px;
+}
+
+.infos-text {
+  max-width: 40%;
+}
+
+.infos-text h2 {
+  font-size: 1.3rem;
+}
+
+.infos-text p {
+  text-align: justify;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.infos-text ul {
+  text-align: left;
+  background: #007bff1f;
+  border-radius: 25px;
+  color: rgb(253, 253, 253);
+  box-shadow: 1px 1px 10px rgb(32, 32, 32);
+  margin: 5px;
+}
+
+.infos-text li {
+  padding: 5px;
+}
+
+@media (max-width: 991.98px) {
+  /* ----MAIN---- */
+
+  main section {
+    flex-direction: column;
+  }
+
+  .banner {
+    min-height: 460px;
+    padding: 10px;
+  }
+
+  .banner h1 {
+    font-size: 2.5rem;
+  }
+
+  #carouselExampleControls {
+    margin: 0 0 30px 0;
+  }
+
+  .img-configs {
+    max-width: 100%;
+  }
+
+  .width-1284 {
+    margin: 0;
+    gap: 0;
+    padding-bottom: 15px;
+  }
+
+  .barra-busca {
+    border-radius: 3px;
+    width: 100%;
+    max-height: fit-content;
+    padding: 10px;
+    display: flex;
+  }
+
+  .barra-busca form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .barra-busca button {
+    margin-top: 10px;
+  }
+
+  .infos {
+    min-width: 100%;
+    margin: 15px 0 0 0;
+    padding: 10px 0 10px 0;
+  }
+
+  .infos img {
+    max-width: 100%;
+  }
+
+  .infos-text {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  #infos-contato {
+    display: flex;
+  }
+
+  #newsletter div {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  #newsletter div i {
+    font-size: 3rem;
+  }
+
+  #newsletter div input {
+    width: auto;
+  }
+
+  /* ----FIM MAIN---- */
+}

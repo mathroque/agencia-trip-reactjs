@@ -1,0 +1,40 @@
+/* ----MODAL---- */
+
+.modal-content {
+  background: #ffffff !important;
+}
+
+#modal-header {
+  display: flex;
+}
+
+.email-box,
+.password-box {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.email-box label,
+.password-box label {
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.email-box input,
+.password-box input {
+  padding: 10px;
+  border-radius: 3px;
+  outline: 2px solid;
+  color: rgb(80, 80, 80);
+  background: rgb(255, 255, 255);
+  border: none;
+}
+
+#modal-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* ----FIM MODAL---- */

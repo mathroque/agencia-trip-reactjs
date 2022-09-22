@@ -1,0 +1,27 @@
+.barra-busca {
+  background-color: #ffffffe3;
+  max-height: 100px;
+  color: rgb(71, 71, 71);
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.barra-busca input {
+  border-radius: 3px;
+}
+
+.barra-busca input {
+  padding: 8px;
+  color: rgb(80, 80, 80);
+  background: rgb(255, 255, 255);
+  border: none;
+}
+
+.barra-busca i {
+  padding: 0 5px;
+}
+
+.barra-busca button {
+    margin: 0 5px;
+}

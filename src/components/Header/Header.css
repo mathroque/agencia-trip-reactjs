@@ -1,0 +1,87 @@
+/* ----CABEÇALHO---- */
+
+.navbar {
+  margin: 0 30px;
+}
+
+#logo {
+  width: 100px;
+}
+
+#mynav ul li {
+  margin-left: 30px;
+}
+
+#mynav ul li a {
+  font-weight: bold;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+#mynav ul li a:hover {
+  color: #007bff;
+}
+
+#mynav ul li:nth-child(5) {
+  background: #007bff;
+  border-radius: 3px;
+  transition: all 0.3s ease-in;
+  box-shadow: 1px 1px 5px rgb(63, 63, 63);
+}
+
+#mynav ul li:nth-child(5):hover {
+  background: #105cad;
+}
+
+#mynav ul li:nth-child(5) a {
+  color: white;
+  padding: 7px 12px;
+}
+
+
+/* ----FIM CABEÇALHO---- */
+
+
+/* -------------------- MOBILE -------------------- */
+
+
+@media (max-width: 991.98px) {
+    /* ----CABEÇALHO---- */
+
+    .navbar {
+        margin: 0 10px;
+    }
+
+    .navbar-toggler {
+        width: 70px;
+        height: 50px;
+    }
+
+    #navbar-toggler-mods {
+        border: none;
+    }
+
+    #navbar-toggler-icon-mods {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    #logo {
+        width: 100px;
+    }
+
+    #mynav ul li {
+        margin-left: 0;
+    }
+
+    #mynav ul li:nth-child(5) {
+        max-width: 90px;
+        margin: 10px 0;
+    }
+
+    #mynav ul li:nth-child(5) a {
+        text-align: center;
+    }
+
+    /* ----FIM CABEÇALHO---- */
+}

@@ -1,16 +1,15 @@
 import PromoCard from "../../components/PromoCard";
 import { useEffect, useState } from "react";
 import { getPromocoes } from "../../Services/PromocoesApiService";
+import "./PromoContinentCard.css"
 
 
 const PromoContinentCard = (props) => {
-  const [listaPromocoes, setListaPromocoes] = useState([]);
+  const promocoes = props.promocoes;
 
-  useEffect(() => {
-    getPromocoes().then((data) => {
-      setListaPromocoes(data);
-    });
-  }, []);
+
+
+  
 
   return (
     <div className="continente">
@@ -19,8 +18,8 @@ const PromoContinentCard = (props) => {
       </a>
       <div className="show" id={props.collapse}>
         <div className="cards">
-          {listaPromocoes.map((item, i) => {
-            return <PromoCard key={i} item={item} />;
+          {promocoes.map((item) => {
+            return <PromoCard key={item.id} item={item} />;
           })}
         </div>
       </div>

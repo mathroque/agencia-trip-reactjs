@@ -9,7 +9,7 @@ const Destinos = () => {
           <div className="width-1284">
             <BarraBusca/>
             <section className="infos">
-              <img src="images/destinos/roma.webp" />
+              <img src={require("../../assets/images/destinos/roma.webp")} />
               <div className="infos-text">
                 <h2>Pacotes exclusivos para Roma!</h2>
                 <p>Viaje para Roma com segurança e tranquilidade.</p>
@@ -22,7 +22,7 @@ const Destinos = () => {
               </div>
             </section>
             <section className="infos">
-              <img src="images/destinos/tailandia.jpg" />
+              <img src={require("../../assets/images/destinos/tailandia.jpg")} />
               <div className="infos-text">
                 <h2>Viaje para a Tailândia! </h2>
                 <p>Conheça as ilhas tailandesas e suas praias.</p>
@@ -35,7 +35,7 @@ const Destinos = () => {
             </section>
 
             <section className="infos">
-              <img src="images/destinos/peru.webp" />
+              <img src={require("../../assets/images/destinos/peru.webp")} />
               <div className="infos-text">
                 <h2>Pacotes para Roma!</h2>
                 <p>Viaje para Roma com segurança e tranquilidade.</p>
@@ -48,7 +48,7 @@ const Destinos = () => {
               </div>
             </section>
             <section className="infos">
-              <img src="images/destinos/australia.jpg" />
+              <img src={require("../../assets/images/destinos/australia.jpg")} />
               <div className="infos-text">
                 <h2>Viaje para a Tailândia! </h2>
                 <p>Conheça as ilhas tailandesas e suas praias.</p>
@@ -61,7 +61,7 @@ const Destinos = () => {
             </section>
 
             <section className="infos">
-              <img src="images/destinos/grecia.webp" />
+              <img src={require("../../assets/images/destinos/grecia.webp")} />
               <div className="infos-text">
                 <h2>Pacotes para Roma!</h2>
                 <p>Viaje para Roma com segurança e tranquilidade.</p>
@@ -74,7 +74,7 @@ const Destinos = () => {
               </div>
             </section>
             <section className="infos">
-              <img src="images/destinos/alemanha.jpg" />
+              <img src={require("../../assets/images/destinos/alemanha.jpg")} />
               <div className="infos-text">
                 <h2>Viaje para a Tailândia! </h2>
                 <p>Conheça as ilhas tailandesas e suas praias.</p>

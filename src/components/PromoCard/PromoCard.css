@@ -1,0 +1,51 @@
+.card {
+  max-width: 20%;
+  margin: 15px 10px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.valor {
+  color: rgb(43, 163, 123);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.valor-antigo {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.por {
+  color: grey;
+  font-weight: 400;
+}
+
+.texto {
+  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  background: rgb(80, 74, 74);
+  max-width: fit-content;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* -------------------- MOBILE -------------------- */
+
+@media (max-width: 991.98px) {
+  /*---PÁGINA PROMOÇÃO---*/
+
+  .card {
+    margin: 10px auto;
+    max-width: 90%;
+  }
+
+  /*---FIM PÁGINA PROMOÇÃO---*/
+}

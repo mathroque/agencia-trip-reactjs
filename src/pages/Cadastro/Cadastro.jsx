@@ -1,6 +1,37 @@
 import "./Cadastro.css";
+import CadastroModel from "../../models/CadastroModel";
+import { postCadastro } from "../../Services/CadastrosApiService";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Cadastro = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const nameChangeHandler = (event) => {
+    setName(event.target.value);
+  };
+
+  const emailChangeHandler = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const passwordChangeHandler = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const newCadastro = new CadastroModel(Math.random(), name, email, password, new Date());
+    postCadastro(newCadastro);
+    setName("");
+    setEmail("");
+    setPassword("");
+    navigate("/")
+  };
+
   return (
     <main>
       <div className="width-1284">
@@ -9,18 +40,18 @@ const Cadastro = () => {
           <p>
             É seu primeiro acesso na <span className="brand-color">Trip</span>? Inscreva-se em nosso site para ter acesso a todas funcionalidades.
           </p>
-          <form id="cadastro-form">
+          <form onSubmit={submitHandler} id="cadastro-form">
             <div className="input-pairs">
               <label htmlFor="cadastro-nome">Nome completo: </label>
-              <input type="text" id="cadastro-nome" required />
+              <input onChange={nameChangeHandler} value={name} type="text" id="cadastro-nome" required />
             </div>
             <div className="input-pairs">
               <label htmlFor="cadastro-email">E-mail:</label>
-              <input type="email" name="email" id="cadastro-email" required />
+              <input onChange={emailChangeHandler} value={email} type="email" name="email" id="cadastro-email" required />
             </div>
             <div className="input-pairs">
               <label htmlFor="senha">Senha: </label>
-              <input type="password" name="senha" id="senha" minLength="8" required />
+              <input onChange={passwordChangeHandler} value={password} type="password" name="senha" id="senha" minLength="8" required />
             </div>
             <input type="submit" value="Cadastrar" className="btn-shy btn-cadastro" />
           </form>

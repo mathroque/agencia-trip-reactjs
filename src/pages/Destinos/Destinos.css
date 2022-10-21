@@ -1,0 +1,43 @@
+#destinos-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.destinos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.barra-pais {
+    background: rgb(255, 255, 255);
+    padding: 7px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: rgb(95, 95, 95);
+    max-width: 550px;
+    border-radius: 5px;
+}
+
+.barra-pais h1 {
+    font-size: 1.3rem;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.barra-pais img {
+    margin: 0 5px;
+}
+
+.pais-input {
+    max-width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgb(235, 235, 235);
+    margin: 0 5px;
+    outline: none;
+}

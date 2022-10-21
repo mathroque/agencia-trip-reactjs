@@ -21,7 +21,7 @@
   color: grey;
 }
 
-.por {
+.por, .de {
   color: grey;
   font-weight: 400;
 }
@@ -35,6 +35,19 @@
   max-width: fit-content;
   padding: 3px 10px;
   border-radius: 20px;
+}
+
+.btn {
+   background: #007bff;
+   color: white;
+  transition: 0.3s ease-in-out;
+  box-shadow: 1px 1px 20px rgb(209, 209, 209);
+}
+
+.btn:hover {
+  background: rgb(43, 163, 123);
+  color: white;
+  border: 1px solid rgb(43, 163, 123);
 }
 
 /* -------------------- MOBILE -------------------- */

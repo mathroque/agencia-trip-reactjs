@@ -8,6 +8,7 @@ const Cadastro = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [feedBackMessage, setfeedBackMessage] = useState("Preencha corretamente os campos abaixo:");
   const navigate = useNavigate();
 
   const nameChangeHandler = (event) => {
@@ -24,12 +25,15 @@ const Cadastro = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    const newCadastro = new CadastroModel(Math.random(), name, email, password, new Date());
-    postCadastro(newCadastro);
+
+    const newCadastro = new CadastroModel(email, password, name);
+    postCadastro(newCadastro).then(() => {
+      setfeedBackMessage(<span className="success-message">Cadastro realizado com sucesso!</span>);
+    }).catch((data) => {setfeedBackMessage(<span className="fail-message">{data}</span>)});
     setName("");
     setEmail("");
     setPassword("");
-    navigate("/")
+    //navigate("/")
   };
 
   return (
@@ -40,6 +44,7 @@ const Cadastro = () => {
           <p>
             É seu primeiro acesso na <span className="brand-color">Trip</span>? Inscreva-se em nosso site para ter acesso a todas funcionalidades.
           </p>
+          {feedBackMessage}
           <form onSubmit={submitHandler} id="cadastro-form">
             <div className="input-pairs">
               <label htmlFor="cadastro-nome">Nome completo: </label>

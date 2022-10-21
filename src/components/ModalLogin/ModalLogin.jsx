@@ -1,8 +1,43 @@
 import "./ModalLogin.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { getCadastros } from "../../Services/CadastrosApiService";
+import { useEffect } from "react";
 
 const ModalLogin = () => {
+  const [emailLogin, setEmailLogin] = useState();
+  const [senhaLogin, setSenhaLogin] = useState();
+  const [cadastros, setCadastros] = useState([]);
 
+  useEffect(() => {
+    getCadastros().then((data) => {
+      setCadastros(data);
+    });
+  }, []);
+
+  const emailChangeHandler = (event) => {
+    setEmailLogin(event.target.value);
+  };
+
+  const senhaChangeHandler = (event) => {
+    setSenhaLogin(event.target.value);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const login = cadastros.filter((cadastro) => {
+      if (cadastro.email === emailLogin && cadastro.senha === senhaLogin) {
+        return cadastro;
+      } else {
+        return false;
+      }
+    });
+    if(login != false) {
+      console.log(login);
+    } else {
+      console.log("login inválido");
+    }
+  };
 
   return (
     <>
@@ -22,19 +57,19 @@ const ModalLogin = () => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <form id="login-form">
+              <form onSubmit={submitHandler} id="login-form">
                 <div className="email-box">
                   <label htmlFor="email">E-mail:</label>
-                  <input type="email" name="email-login" id="email-login" />
+                  <input onChange={emailChangeHandler} type="email" name="email-login" id="email-login" />
                 </div>
                 <div className="password-box">
                   <label htmlFor="password">Senha:</label>
-                  <input type="password" name="password" id="password" />
+                  <input onChange={senhaChangeHandler} type="password" name="password" id="password" />
                 </div>
                 <div id="modal-footer">
                   <input type="submit" value="Entrar" className="btn-plus"></input>
-                  <Link to="/cadastro" type="button" className="btn-shy" >
-                     <span data-bs-dismiss="modal">Cadastre-se</span>
+                  <Link to="/cadastro" type="button" className="btn-shy">
+                    <span data-bs-dismiss="modal">Cadastre-se</span>
                   </Link>
                 </div>
               </form>

@@ -48,6 +48,13 @@ const Promocoes = () => {
                   return item.continente === "Ásia";
                 })}
               />
+              <PromoContinentCard
+                continent="África"
+                collapse="AF"
+                promocoes={listaPromocoes.filter((item) => {
+                  return item.continente === "África";
+                })}
+              />
             </section>
           </div>
         </section>

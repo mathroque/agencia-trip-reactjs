@@ -1,89 +1,42 @@
-import BarraBusca from "../../components/BarraBusca";
+import { useState } from "react";
+import { useEffect } from "react";
+import DestinoCard from "../../components/DestinoCard";
+import { getDestinos } from "../../Services/DestinosApiService";
 import "./Destinos.css";
 
 const Destinos = () => {
+  const [listaDestinos, setListaDestinos] = useState([]);
+  const [pais, setPais] = useState("");
+
+  useEffect(() => {
+    getDestinos().then((data) => {
+      setListaDestinos(data);
+    });
+  }, []);
+
+  const paisChangeHandler = (event) => {
+    setPais(event.target.value.trim());
+  };
+
   return (
     <main>
       <section className="d-flex flex-column">
         <section id="conteudo">
-          <div className="width-1284">
-            <BarraBusca/>
-            <section className="infos">
-              <img src={require("../../assets/images/destinos/roma.webp")} />
-              <div className="infos-text">
-                <h2>Pacotes exclusivos para Roma!</h2>
-                <p>Viaje para Roma com segurança e tranquilidade.</p>
-                <p>Inclui:</p>
-                <ul>
-                  <li>Recepção no aeroporto</li>
-                  <li>Guia turístico</li>
-                  <li>Visita ao Coliseu</li>
-                </ul>
-              </div>
+          <div id="destinos-container" className="width-1284">
+            <section className="barra-pais">
+              <img src={require("../../assets/images/favicon.png")} alt="logo" width={50} />
+              <label htmlFor="pais-input">
+                <h1>Para onde deseja ir?</h1>
+              </label>
+              <input className="pais-input" placeholder="ex.: Roma" onChange={paisChangeHandler} type="text" name="pais-input" id="pais-input" />
             </section>
-            <section className="infos">
-              <img src={require("../../assets/images/destinos/tailandia.jpg")} />
-              <div className="infos-text">
-                <h2>Viaje para a Tailândia! </h2>
-                <p>Conheça as ilhas tailandesas e suas praias.</p>
-                <p>Inclui:</p>
-                <ul>
-                  <li>Ao menos três das principais ilhas inclusas no pacote</li>
-                  <li>Guia turístico</li>
-                </ul>
-              </div>
-            </section>
-
-            <section className="infos">
-              <img src={require("../../assets/images/destinos/peru.webp")} />
-              <div className="infos-text">
-                <h2>Pacotes para Roma!</h2>
-                <p>Viaje para Roma com segurança e tranquilidade.</p>
-                <p>Inclui:</p>
-                <ul>
-                  <li>Recepção no aeroporto</li>
-                  <li>Guia turístico</li>
-                  <li>Visita ao Coliseu</li>
-                </ul>
-              </div>
-            </section>
-            <section className="infos">
-              <img src={require("../../assets/images/destinos/australia.jpg")} />
-              <div className="infos-text">
-                <h2>Viaje para a Tailândia! </h2>
-                <p>Conheça as ilhas tailandesas e suas praias.</p>
-                <p>Inclui:</p>
-                <ul>
-                  <li>Ao menos três das principais ilhas inclusas no pacote</li>
-                  <li>Guia turístico</li>
-                </ul>
-              </div>
-            </section>
-
-            <section className="infos">
-              <img src={require("../../assets/images/destinos/grecia.webp")} />
-              <div className="infos-text">
-                <h2>Pacotes para Roma!</h2>
-                <p>Viaje para Roma com segurança e tranquilidade.</p>
-                <p>Inclui:</p>
-                <ul>
-                  <li>Recepção no aeroporto</li>
-                  <li>Guia turístico</li>
-                  <li>Visita ao Coliseu</li>
-                </ul>
-              </div>
-            </section>
-            <section className="infos">
-              <img src={require("../../assets/images/destinos/alemanha.jpg")} />
-              <div className="infos-text">
-                <h2>Viaje para a Tailândia! </h2>
-                <p>Conheça as ilhas tailandesas e suas praias.</p>
-                <p>Inclui:</p>
-                <ul>
-                  <li>Ao menos três das principais ilhas inclusas no pacote</li>
-                  <li>Guia turístico</li>
-                </ul>
-              </div>
+            <section className="destinos">
+              {listaDestinos.map((item) => {
+                if (pais) {
+                  return item.destino.toLowerCase().includes(pais.toLowerCase()) && <DestinoCard key={item.id} item={item} />;
+                }
+                return <DestinoCard key={item.id} item={item} />;
+              })}
             </section>
           </div>
         </section>

@@ -1,7 +1,10 @@
 import "./Footer.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+
+  const navigate = useNavigate();
+
   return (
     <footer>
       <section className="empresa">
@@ -22,11 +25,11 @@ const Footer = () => {
         <i>Matheus Roque</i>
         <br />
         <span>
-          <a>
+          <a href="https://www.linkedin.com/in/matheus-roque-/" target="_blank">
             <i className="fa-brands fa-linkedin linkedin"></i>
           </a>
-          |
-          <a>
+          &
+          <a href="https://github.com/mathroque" target="_blank">
             <i className="fa-brands fa-github-square github"></i>
           </a>
         </span>

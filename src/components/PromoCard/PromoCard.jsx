@@ -5,7 +5,7 @@ const PromoCard = (props) => {
   const valor = props.item.valor
   const valorConvertido = valor.toLocaleString("pt-BR", {style: "currency", currency: "BRL" })
   const valorAntigo = () => {
-    let percent = 100 - desconto;
+    const percent = 100 - desconto;
     const valorAntigo = ((valor * 100) / percent).toLocaleString("pt-BR", {style: "currency", currency: "BRL" });
     return valorAntigo
   }
@@ -18,10 +18,10 @@ const PromoCard = (props) => {
           -{desconto}%<span className="visually-hidden">porcentagem de desconto</span>
         </span>
         <h5 className="card-title">{props.item.cidade} ({props.item.pais})</h5>
-        <span className="valor-antigo">De: {valorAntigo()}</span>
+        <span className="de">De: <span className="valor-antigo"> {valorAntigo()}</span></span>
         <p className="valor"><span className="por">Por: </span>{valorConvertido}</p>
         <p className="texto">{props.item.ano}</p>
-        <button  className="btn btn-primary">
+        <button  className="btn">
           Comprar
         </button>
       </div>

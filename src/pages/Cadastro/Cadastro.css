@@ -42,6 +42,16 @@
   margin: 40px auto 0 auto;
 }
 
+.success-message {
+  color: rgb(3, 161, 87);
+  font-weight: 600;
+}
+
+.fail-message {
+  color: rgb(161, 3, 43);
+  font-weight: 600;
+}
+
 /* ----FIM PÁGINA CADASTRO---- */
 
 /* -------------------- MOBILE -------------------- */

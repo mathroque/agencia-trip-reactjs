@@ -8,6 +8,12 @@ export const getCadastros = () => {
   });
 };
 
+export const getOneCadastro = (id) => {
+  return axios.get(urlCadastrosApi + "/" + id).then((response) => {
+    return response.data;
+  });
+};
+
 export const postCadastro = (newCadastro) => {
   const camposCadastro = {
     email: newCadastro.email,
@@ -20,6 +26,7 @@ export const postCadastro = (newCadastro) => {
       return response.data;
     })
     .catch((error) => {
-      return error.response.data;
+      // console.log(error.response.data);
+      return error;
     });
 };

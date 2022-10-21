@@ -1,5 +1,5 @@
 import "./ModalLogin.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { getCadastros } from "../../Services/CadastrosApiService";
 import { useEffect } from "react";
@@ -8,6 +8,7 @@ const ModalLogin = () => {
   const [emailLogin, setEmailLogin] = useState();
   const [senhaLogin, setSenhaLogin] = useState();
   const [cadastros, setCadastros] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getCadastros().then((data) => {
@@ -24,7 +25,6 @@ const ModalLogin = () => {
   };
 
   const submitHandler = (event) => {
-    event.preventDefault();
     const login = cadastros.filter((cadastro) => {
       if (cadastro.email === emailLogin && cadastro.senha === senhaLogin) {
         return cadastro;
@@ -32,8 +32,7 @@ const ModalLogin = () => {
         return false;
       }
     });
-    if(login != false) {
-      console.log(login);
+    if (login != false) {
     } else {
       console.log("login inválido");
     }

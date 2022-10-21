@@ -2,14 +2,12 @@ import "./Cadastro.css";
 import CadastroModel from "../../models/CadastroModel";
 import { postCadastro } from "../../Services/CadastrosApiService";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Cadastro = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [feedBackMessage, setfeedBackMessage] = useState("Preencha corretamente os campos abaixo:");
-  const navigate = useNavigate();
 
   const nameChangeHandler = (event) => {
     setName(event.target.value);
@@ -29,11 +27,10 @@ const Cadastro = () => {
     const newCadastro = new CadastroModel(email, password, name);
     postCadastro(newCadastro).then(() => {
       setfeedBackMessage(<span className="success-message">Cadastro realizado com sucesso!</span>);
-    }).catch((data) => {setfeedBackMessage(<span className="fail-message">{data}</span>)});
+    });
     setName("");
     setEmail("");
     setPassword("");
-    //navigate("/")
   };
 
   return (
